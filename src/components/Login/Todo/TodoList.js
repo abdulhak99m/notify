@@ -60,13 +60,40 @@ function TodoList() {
     // setTodos(newTodos);
   };
 
-  const updateTodo = (todoId, newValue,dbId) => {
+  const addOthersTodo = (todo, data) => {
+    if (!todo.text || /^\s*$/.test(todo.text)) {
+      return;
+    }
+
+    let date = new Date().toDateString();
+    console.log(date)
+
+    db.child('todos').push(
+        {...todo,userId:userId,email:userEmail,isComplete:false,createdAt:date,type:'other'},err => {
+            if(err)
+            console.log(err)
+        }
+    )
+
+    db.child(`todos/${todo.todo_uid}`).set(
+      {...data,reciever_id:todo.id,reciever_email:userEmail,is_added:true},err => {
+          if(err)
+          console.log(err)
+      }
+  )
+
+    // const newTodos = [todo, ...todos];
+
+    // setTodos(newTodos);
+  };
+
+  const updateTodo = (todoId, newValue,dbId,data) => {
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
       return;
     }
     let date = new Date();
     db.child(`todos/${dbId}`).set(
-        {...newValue,userId:userId,email:userEmail,date:date},err => {
+        {...data,newValue},err => {
             if(err)
             console.log(err)
         }
@@ -86,15 +113,21 @@ function TodoList() {
     // setTodos(removedArr);
   };
 
-  const completeTodo = (newValue,dbId) => {
+  const completeTodo = (newValue,dbId,user,uId) => {
     let date = new Date();
 
     db.child(`todos/${dbId}`).set(
-        {text:newValue,userId:userId,email:userEmail,isComplete:true,date:date},err => {
+        {...newValue,isComplete:true},err => {
             if(err)
             console.log(err)
         }
     )
+    db.child(`todos/${uId}`).set(
+      {...user,isComplete:true},err => {
+          if(err)
+          console.log(err)
+      }
+  )
 
     // let updatedTodos = todos.map(todo => {
     //   if (todo.id === id) {
@@ -116,6 +149,7 @@ function TodoList() {
         completeTodo={completeTodo}
         removeTodo={removeTodo}
         updateTodo={updateTodo}
+        addOthersTodo={addOthersTodo}
       />
     </>
   );
