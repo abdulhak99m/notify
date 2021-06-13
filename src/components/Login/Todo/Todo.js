@@ -205,9 +205,9 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo, userId,addTodo ,add
       <>
       <h2 className="myTodo displayNone" style={{backgroundColor:'#5d0cff',color:'white',padding:'10px',marginBottom:'15px'}}>My Package</h2>
       {renderMyTodoList()}
-      <h2 className="myOtherTodo displayNone" style={{backgroundColor:'#5d0cff',color:'white',padding:'10px',marginBottom:'15px',marginTop:'20px'}}>Todo Added From Others List</h2>
+      <h2 className="myOtherTodo displayNone" style={{backgroundColor:'#5d0cff',color:'white',padding:'10px',marginBottom:'15px',marginTop:'20px'}}>My Deliveries</h2>
       {renderMyOthersTodoList()}
-      <h2 className="otherTodo displayNone" style={{backgroundColor:'#5d0cff',color:'white',padding:'10px',marginBottom:'15px',marginTop:'20px'}}>Others Todo List</h2>
+      <h2 className="otherTodo displayNone" style={{backgroundColor:'#5d0cff',color:'white',padding:'10px',marginBottom:'15px',marginTop:'20px'}}>Others Deliveries</h2>
       {renderOthersTodoList()}
       </>
   )
