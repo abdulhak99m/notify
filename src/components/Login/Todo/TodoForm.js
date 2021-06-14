@@ -3,24 +3,23 @@ import React, { useState, useEffect, useRef } from 'react';
 
 function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : '');
-  const [from, setFrom] = useState('');
+  const [from, setFrom] = useState("");
   
-  const inputRef = useRef(null);
-  const fromRef = useRef(null);
+  // const inputRef = useRef(null);
   
-  // useEffect(() => {
-  //   inputRef.current.focus();
+  
+  //  useEffect(() => {
+  //    inputRef.current.focus();
     
-  // });
+  //  });
 
   const handleChange = e => {
     setInput(e.target.value);
   };
 
   const handleChange = e => {
-    setFrom(e.target.from);
+    setFrom(e.target.value);
   };
-
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -28,10 +27,10 @@ function TodoForm(props) {
     props.onSubmit({
       id: Math.floor(Math.random() * 10000),
       text: input,
-     text2:from
+      text2: from
     });
     setInput('');
-    setFrom('');
+    
   };
 
   return (
@@ -58,16 +57,18 @@ function TodoForm(props) {
             onChange={handleChange}
             name='text'
             className='todo-input'
-            ref={inputRef}
+           // ref={inputRef}
           />
-            <input
-            placeholder='From'
-            value={from}
+
+<input
+            placeholder='Package Name'
+            value={input}
             onChange={handleChange}
             name='text2'
-            className='tod'
-            ref={fromRef}
+            className='todo-input'
+            ref={inputRef}
           />
+           
            
           <button onClick={handleSubmit} className='todo-button'>
           Post my Package
