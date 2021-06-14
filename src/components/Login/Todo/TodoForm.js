@@ -7,10 +7,10 @@ function TodoForm(props) {
   const inputRef = useRef(null);
   
   
-   useEffect(() => {
-     inputRef.current.focus();
+  //  useEffect(() => {
+  //    inputRef.current.focus();
     
-   });
+  //  });
 
   const handleChange = e => {
     let value = e.target.value;
@@ -47,7 +47,7 @@ function TodoForm(props) {
             value={input}
             onChange={handleChange}
             name='text'
-            ref={inputRef}
+          //  ref={inputRef}
             className='todo-input edit'
           />
           <button onClick={handleSubmit} className='todo-button edit'>
@@ -62,7 +62,7 @@ function TodoForm(props) {
             onChange={handleChange}
             name='package'
             className='todo-input'
-           ref={inputRef}
+          // ref={inputRef}
           />
 
         <input
