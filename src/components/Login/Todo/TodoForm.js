@@ -32,8 +32,7 @@ function TodoForm(props) {
 
     props.onSubmit({
       id: Math.floor(Math.random() * 10000),
-      text: input,
-      text2: from
+     
     });
     setInput('');
     
