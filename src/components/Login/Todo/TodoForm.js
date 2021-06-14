@@ -63,7 +63,7 @@ function TodoForm(props) {
 <input
             placeholder='FROM'
             value={from}
-            onChange={handleChange}
+            //onChange={handleChange}
            // name='text2'
            // className='todo-input'
             //ref={inputRef}
