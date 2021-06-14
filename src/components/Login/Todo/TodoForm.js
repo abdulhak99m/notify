@@ -61,12 +61,12 @@ function TodoForm(props) {
           />
 
 <input
-            placeholder='Package Name'
-            value={input}
+            placeholder='FROM'
+            value={from}
             onChange={handleChange}
             name='text2'
             className='todo-input'
-            ref={inputRef}
+            //ref={inputRef}
           />
            
            
