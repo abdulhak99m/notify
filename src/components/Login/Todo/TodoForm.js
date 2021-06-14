@@ -15,11 +15,10 @@ function TodoForm(props) {
 
   const handleChange = e => {
     setInput(e.target.value);
+    setFrom(e.target.from);
   };
 
-  const handleChange = e => {
-    setFrom(e.target.value);
-  };
+  
 
   const handleSubmit = e => {
     e.preventDefault();
