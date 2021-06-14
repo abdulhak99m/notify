@@ -8,15 +8,19 @@ function TodoForm(props) {
   const inputRef = useRef(null);
   const fromRef = useRef(null);
   
-  useEffect(() => {
-    inputRef.current.focus();
-    fromRef.current.focus();
-  });
+  // useEffect(() => {
+  //   inputRef.current.focus();
+    
+  // });
 
   const handleChange = e => {
     setInput(e.target.value);
+  };
+
+  const handleChange = e => {
     setFrom(e.target.from);
   };
+
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -61,7 +65,7 @@ function TodoForm(props) {
             value={from}
             onChange={handleChange}
             name='text2'
-            className='todo-input'
+            className='tod'
             ref={fromRef}
           />
            
