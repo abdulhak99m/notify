@@ -43,7 +43,23 @@ function TodoForm(props) {
       ) : (
         <>
           <input
-            placeholder='Add a todo'
+            placeholder='Package Name'
+            value={input}
+            onChange={handleChange}
+            name='text'
+            className='todo-input'
+            ref={inputRef}
+          />
+          <input
+            placeholder='From'
+            value={input}
+            onChange={handleChange}
+            name='text'
+            className='todo-input'
+            ref={inputRef}
+          />
+           <input
+            placeholder='To'
             value={input}
             onChange={handleChange}
             name='text'
