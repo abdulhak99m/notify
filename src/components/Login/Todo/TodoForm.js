@@ -38,7 +38,7 @@ function TodoForm(props) {
     setInput('');
     
   };
-  
+
   return (
     <form onSubmit={handleSubmit} className='todo-form'>
       {props.edit ? (
@@ -59,7 +59,7 @@ function TodoForm(props) {
         <>
           <input
             placeholder='Package Name'
-            value={input}
+           // value={input}
             onChange={handleChange}
             name='package'
             className='todo-input'
@@ -68,7 +68,7 @@ function TodoForm(props) {
 
         <input
             placeholder='froM'
-            value={from}
+          //  value={from}
             onChange={handleChange}
             name='from'
             className='todo-input'
