@@ -2,21 +2,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 function TodoForm(props) {
-  const [input, setInput] = useState(props.edit ? props.edit.value : '');
-  const [from, setFrom] = useState("");
-  
+ // const [input, setInput] = useState(props.edit ? props.edit.value : '');
+ const [input, setInput] = useState({package: '', from: ''})
   const inputRef = useRef(null);
   
   
-  //  useEffect(() => {
-  //    inputRef.current.focus();
+   useEffect(() => {
+     inputRef.current.focus();
     
-  //  });
+   });
 
   const handleChange = e => {
-    setInput(e.target.value);
-    setFrom(e.target.from);
-  };
+    let value = e.target.value;
+    let theForm = e.target.theForm;
+
+
+  setInput((prevalue) => {
+    return {
+      ...prevalue,   // Spread Operator               
+      [theForm]: value
+    }
+  })
+   }
 
   
 
@@ -54,16 +61,16 @@ function TodoForm(props) {
             placeholder='Package Name'
             value={input}
             onChange={handleChange}
-            name='text'
+            name='package'
             className='todo-input'
            ref={inputRef}
           />
 
-<input
+        <input
             placeholder='froM'
             value={from}
             onChange={handleChange}
-            name='text2'
+            name='from'
             className='todo-input'
             //ref={inputRef}
           />
@@ -77,5 +84,6 @@ function TodoForm(props) {
     </form>
   );
 }
+
 
 export default TodoForm;
