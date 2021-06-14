@@ -22,7 +22,7 @@ function TodoForm(props) {
     props.onSubmit({
       id: Math.floor(Math.random() * 10000),
       text: input,
-      text: from
+      text2: from
     });
     setInput('');
   };
@@ -57,7 +57,7 @@ function TodoForm(props) {
             placeholder='From'
             value={from}
             onChange={handleChange}
-            name='text'
+            name='text2'
             className='todo-input'
             //ref={inputRef}
           />
