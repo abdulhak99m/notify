@@ -5,7 +5,7 @@ function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : '');
   const [from, setFrom] = useState("");
   
-  // const inputRef = useRef(null);
+  const inputRef = useRef(null);
   
   
   //  useEffect(() => {
@@ -56,7 +56,7 @@ function TodoForm(props) {
             onChange={handleChange}
             name='text'
             className='todo-input'
-           // ref={inputRef}
+           ref={inputRef}
           />
 
 <input
