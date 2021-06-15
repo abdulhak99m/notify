@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : '');
-  const [from, setFrom] = useState(props.edit ? props.edit.value : '');
+ 
   
   const inputRef = useRef(null);
 
@@ -13,9 +13,7 @@ function TodoForm(props) {
 
   const handleChange = e => {
     setInput(e.target.value);
-  };
-  const handleChange = e => {
-    setFrom(e.target.value);
+    
   };
 
   const handleSubmit = e => {
@@ -23,20 +21,10 @@ function TodoForm(props) {
 
     props.onSubmit({
       id: Math.floor(Math.random() * 10000),
-      text: input,
-    
+      text: input
+     
     });
     setInput('');
-  };
-  const handleSubmit = e => {
-    e.preventDefault();
-
-    props.onSubmit({
-      id: Math.floor(Math.random() * 10000),
-      text2: from,
-    
-    });
-    setFrom('');
   };
 
   return (
@@ -63,16 +51,10 @@ function TodoForm(props) {
             onChange={handleChange}
             name='text'
             className='todo-input'
-           // ref={inputRef}
+            ref={inputRef}
           />
-           <input
-            placeholder='FROM'
-            value={from}
-            onChange={handleChange}
-            name='text2'
-            className='todo-input'
-           // ref={inputRef}
-          />
+         
+           
           <button onClick={handleSubmit} className='todo-button'>
           Post my Package
           </button>
