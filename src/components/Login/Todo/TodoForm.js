@@ -29,7 +29,7 @@ function TodoForm(props) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    alert('A name was submitted: ');
+    alert('A name was submitted2: ');
     props.onSubmit({
       id: Math.floor(Math.random() * 10000),
       
