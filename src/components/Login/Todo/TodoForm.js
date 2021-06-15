@@ -66,7 +66,7 @@ function TodoForm(props) {
           />
 
         <input
-            placeholder='froM'
+            placeholder='from'
           //  value={from}
             onChange={handleChange}
             name='from'
