@@ -2,40 +2,41 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 function TodoForm(props) {
- // const [input, setInput] = useState(props.edit ? props.edit.value : '');
- const [input, setInput] = useState({package: '', from: ''})
+  const [input, setInput] = useState(props.edit ? props.edit.value : '');
+  const [from, setFrom] = useState(props.edit ? props.edit.value : '');
+  
   const inputRef = useRef(null);
-  
-  
-  //  useEffect(() => {
-  //    inputRef.current.focus();
-    
-  //  });
+
+  useEffect(() => {
+    inputRef.current.focus();
+  });
 
   const handleChange = e => {
-    let value = e.target.value;
-    let theForm = e.target.theForm;
-
-
-  setInput((prevalue) => {
-    return {
-      ...prevalue,   // Spread Operator               
-      [theForm]: value
-    }
-  })
-   }
-
-  
+    setInput(e.target.value);
+  };
+  const handleChange = e => {
+    setFrom(e.target.value);
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
-    alert('A name was submitted4: ' +  props.onSubmit());
+
     props.onSubmit({
       id: Math.floor(Math.random() * 10000),
-      
+      text: input,
+    
     });
     setInput('');
-   
+  };
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    props.onSubmit({
+      id: Math.floor(Math.random() * 10000),
+      text2: from,
+    
+    });
+    setFrom('');
   };
 
   return (
@@ -47,7 +48,7 @@ function TodoForm(props) {
             value={input}
             onChange={handleChange}
             name='text'
-          //  ref={inputRef}
+            ref={inputRef}
             className='todo-input edit'
           />
           <button onClick={handleSubmit} className='todo-button edit'>
@@ -58,23 +59,20 @@ function TodoForm(props) {
         <>
           <input
             placeholder='Package Name'
-           // value={input}
+            value={input}
             onChange={handleChange}
-            name='package'
+            name='text'
             className='todo-input'
-          // ref={inputRef}
+           // ref={inputRef}
           />
-
-        <input
-            placeholder='from'
-          //  value={from}
+           <input
+            placeholder='FROM'
+            value={from}
             onChange={handleChange}
-            name='from'
+            name='text2'
             className='todo-input'
-            //ref={inputRef}
+           // ref={inputRef}
           />
-           
-           
           <button onClick={handleSubmit} className='todo-button'>
           Post my Package
           </button>
@@ -83,6 +81,5 @@ function TodoForm(props) {
     </form>
   );
 }
-
 
 export default TodoForm;
