@@ -35,7 +35,7 @@ function TodoForm(props) {
       
     });
     setInput('');
-    alert('A name was submitted: ');
+    alert('A name was submitted: '+ this.value);
   };
 
   return (
