@@ -49,7 +49,8 @@ function TodoList() {
     console.log(date)
 
     db.child('todos').push(
-        {...todo,userId:userId,email:userEmail,isComplete:false,createdAt:date},err => {
+        {...todo,userId:userId,email:userEmail,isComplete:false},err => {
+        //  {...todo,userId:userId,email:userEmail,isComplete:false,createdAt:date},err => {
             if(err)
             console.log(err)
         }
