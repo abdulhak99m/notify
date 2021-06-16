@@ -104,7 +104,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo, userId,addTodo ,add
         >
           <div key={todos[todo].id} onClick={() => completeTodo(todos[todo].id)}>
             <p style={{textAlign:'left',fontSize:'1.2rem'}}>{todos[todo].text}</p>
-            <p style={{fontWeight:'450',marginTop:'-15px',textAlign:'left',fontSize:'0.9rem'}}>User Email : {todos[todo].todo_email}</p>
+            <p style={{fontWeight:'450',marginTop:'-15px',textAlign:'left',fontSize:'0.9rem'}}>Posted By : {todos[todo].todo_email}</p>
             <p style={{marginTop:'-12px',textAlign:'left',}}>{todos[todo].createdAt}</p>
           </div>
 
