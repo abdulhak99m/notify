@@ -93,7 +93,7 @@ function TodoList() {
     }
     let date = new Date();
     db.child(`todos/${dbId}`).set(
-        {...newValue,data},err => {
+        {...data,newValue},err => {
             if(err)
             console.log(err)
         }
