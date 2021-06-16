@@ -19,6 +19,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo, userId,addTodo ,add
     setEdit({
       dbId:null,
       id: null,
+      data:{},
       value: ''
     });
   };
