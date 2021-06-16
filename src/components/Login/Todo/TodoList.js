@@ -86,18 +86,18 @@ function TodoList() {
 
     // setTodos(newTodos);
   };
-  const updateTodo = (todoId, newValue,dbId) => {
+
+  const updateTodo = (todoId, newValue,dbId,data) => {
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
       return;
     }
     let date = new Date();
     db.child(`todos/${dbId}`).set(
-        {...newValue,userId:userId,email:userEmail,date:date},err => {
+        {...newValue,data},err => {
             if(err)
             console.log(err)
         }
     )
-    
     
     setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
   };
