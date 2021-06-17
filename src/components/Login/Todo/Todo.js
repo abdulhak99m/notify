@@ -10,6 +10,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo, userId,addTodo ,add
     dbId:null,
     data:{},
     value: ''
+    
   });
 
 
@@ -19,7 +20,6 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo, userId,addTodo ,add
     setEdit({
       dbId:null,
       id: null,
-      data:{},
       value: ''
     });
   };
@@ -52,6 +52,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo, userId,addTodo ,add
         >
           <div key={todos[todo].id} onClick={() => completeTodo(todos[todo].id)}>
             <p style={{textAlign:'left',fontSize:'1.2rem'}}>{todos[todo].text}</p>
+            <p style={{textAlign:'left',fontSize:'1.2rem'}}>{todos[todo].text2}</p>
             { todos[todo].is_added && <p style={{fontWeight:'450',marginTop:'-15px',textAlign:'left',fontSize:'0.9rem'}}>Accepted By : {todos[todo].reciever_email}</p>}
             <p style={{marginTop:'-12px',textAlign:'left'}}>{todos[todo].createdAt}</p>
           </div>
