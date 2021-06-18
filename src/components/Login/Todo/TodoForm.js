@@ -14,9 +14,7 @@ function TodoForm(props) {
   const handleChange = e => {
     setInput(e.target.value);
   };
-  const handleChange2 = e => {
-    setInput2(e.target.value);
-  };
+  
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -57,14 +55,16 @@ function TodoForm(props) {
             className='todo-input'
             ref={inputRef}
           />
+          <p>
           <input
-            placeholder='FroM'
+            placeholder='From'
             value={input2}
-            onChange={handleChange2}
+            onChange={handleChange}
             name='text2'
             className='todo-input'
-            ref={inputRef}
+           // ref={inputRef}
           />
+          </p>
           <button onClick={handleSubmit} className='todo-button'>
             Add Package
           </button>
