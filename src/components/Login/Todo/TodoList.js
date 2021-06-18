@@ -86,6 +86,22 @@ function TodoList() {
 
     // setTodos(newTodos);
   };
+//where it's changed
+
+  // const updateTodo = (todoId, newValue,dbId,data) => {
+  //   if (!newValue.text || /^\s*$/.test(newValue.text)) {
+  //     return;
+  //   }
+  //   let date = new Date();
+  //   db.child(`todos/${dbId}`).set(
+  //       {...data,newValue},err => {
+  //           if(err)
+  //           console.log(err)
+  //       }
+  //   )
+    
+  //   setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
+  // };
 
   const updateTodo = (todoId, newValue,dbId,data,user,uId) => {
     console.log(user,uId)
@@ -131,6 +147,8 @@ function TodoList() {
     
     
   };
+
+
 
   const removeTodo = (id,dbId) => {
     const removedArr = [...todos].filter(todo => todo.id !== id);
