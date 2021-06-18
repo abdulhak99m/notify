@@ -53,7 +53,7 @@ function TodoForm(props) {
             onChange={handleChange}
             name='text'
             className='todo-input'
-            ref={inputRef}
+           // ref={inputRef}
           />
           <p>
           <input
