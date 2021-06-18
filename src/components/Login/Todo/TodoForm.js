@@ -5,16 +5,16 @@ function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : '');
   const [input2, setInput2] = useState(props.edit ? props.edit.value : '');
   
-  const inputRef = useRef(null);
+  // const inputRef = useRef(null);
 
-  useEffect(() => {
-    inputRef.current.focus();
-  });
+  // useEffect(() => {
+  //   inputRef.current.focus();
+  // });
 
   const handleChange = e => {
     setInput(e.target.value);
   };
-  const handleChange = e => {
+  const handleChange2 = e => {
     setInput2(e.target.value);
   };
 
@@ -40,7 +40,7 @@ function TodoForm(props) {
             value={input}
             onChange={handleChange}
             name='text'
-            ref={inputRef}
+           // ref={inputRef}
             className='todo-input edit'
           />
           <button onClick={handleSubmit} className='todo-button edit'>
@@ -55,13 +55,13 @@ function TodoForm(props) {
             onChange={handleChange}
             name='text'
             className='todo-input'
-            ref={inputRef}
+           // ref={inputRef}
           />
           <p>
           <input
             placeholder='FroM'
             value={input2}
-            onChange={handleChange}
+            onChange={handleChange2}
             name='text2'
             className='todo-input'
            // ref={inputRef}
