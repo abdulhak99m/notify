@@ -87,19 +87,49 @@ function TodoList() {
     // setTodos(newTodos);
   };
 
-  const updateTodo = (todoId, newValue,dbId,data) => {
+  const updateTodo = (todoId, newValue,dbId,data,user,uId) => {
+    console.log(user,uId)
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
       return;
     }
     let date = new Date();
+    let text = newValue.text
     db.child(`todos/${dbId}`).set(
-        {...data,newValue},err => {
+        {...data,text},err => {
             if(err)
             console.log(err)
         }
     )
+
+    if(user && uId){
+
+    db.child(`todos/${uId}`).set(
+      {...user,text},err => {
+          if(err)
+          console.log(err)
+      }
+  )
+    }
+
+  // db.child('todos').on('value',snapshot => {
+  //           if(snapshot.val() != null)
+  //           {
+  //             setTodosList({...snapshot.val()})
+  //           }
+  //       })
+
+  db.child("todos").get().then((snapshot) => {
+    if (snapshot.exists()) {
+      setTodosList({...snapshot.val()})
+    } else {
+      console.log("No data available");
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
+
     
-    setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
+    
   };
 
   const removeTodo = (id,dbId) => {
