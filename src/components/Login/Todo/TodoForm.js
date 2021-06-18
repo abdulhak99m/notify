@@ -43,6 +43,14 @@ function TodoForm(props) {
            // ref={inputRef}
             className='todo-input edit'
           />
+          <input
+            placeholder='Update from Location'
+            value={input2}
+            onChange={handleChange}
+            name='text2'
+           // ref={inputRef}
+            className='todo-input edit'
+          />
           <button onClick={handleSubmit} className='todo-button edit'>
             Update
           </button>
@@ -59,7 +67,7 @@ function TodoForm(props) {
           />
           <p>
           <input
-            placeholder='FroM'
+            placeholder='From'
             value={input2}
             onChange={handleChange2}
             name='text2'
