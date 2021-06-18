@@ -14,7 +14,9 @@ function TodoForm(props) {
   const handleChange = e => {
     setInput(e.target.value);
   };
-  
+  const handleChange = e => {
+    setInput2(e.target.value);
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -53,11 +55,11 @@ function TodoForm(props) {
             onChange={handleChange}
             name='text'
             className='todo-input'
-           // ref={inputRef}
+            ref={inputRef}
           />
           <p>
           <input
-            placeholder='From'
+            placeholder='FroM'
             value={input2}
             onChange={handleChange}
             name='text2'
