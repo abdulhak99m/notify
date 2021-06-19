@@ -15,3 +15,6 @@ var firebaseConfig = {
   export const db = fire.database().ref();
 
   export default fire;
+
+
+
