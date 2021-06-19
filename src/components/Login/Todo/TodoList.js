@@ -188,7 +188,7 @@ function TodoList() {
 
   return (
     <>
-      <h1>Post your Package</h1>
+      <h1>Add a Parent</h1>
       <TodoForm onSubmit={addTodo} />
       <Todo
         todos={todosList}
