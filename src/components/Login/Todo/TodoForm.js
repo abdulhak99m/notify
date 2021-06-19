@@ -68,7 +68,7 @@ function TodoForm(props) {
           />
           <p>
           <input
-            placeholder='Add Parent Number'
+            placeholder='Add Parent Name'
             value={input2}
             onChange={handleChange2}
             name='text2'
