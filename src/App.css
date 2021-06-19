@@ -9,7 +9,7 @@
 body {
   background: linear-gradient(
     90deg,
-    rgba(227, 226, 236, 0.836) 0%,
+    rgba(89, 64, 255, 0.836) 0%,
     rgba(100, 115, 255, 1) 100%
   );
 }
@@ -22,7 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 600px;
+  width: 700px;
   min-height: 500px;
   padding-top: 50px !important;
   background: #161a2bde;
@@ -32,16 +32,20 @@ body {
   padding-bottom: 32px;
 }
 
+.displayNone{
+  display: none !important;
+}
+
 h1 {
   margin: 32px 0;
   color: #fff;
   font-size: 24px;
 }
 
-.complete {
+/* .complete {
   text-decoration: line-through;
   opacity: 0.4;
-}
+} */
 
 .incomplete{
     padding:0px !important;

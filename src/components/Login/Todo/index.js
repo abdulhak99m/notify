@@ -10,7 +10,7 @@ export class TodoApp extends Component {
                <div className='todo-app'>
                <TodoList/>
                </div>
-               <a onClick={this.props.onLogoutClick} style={{position:'absolute',right:'10px',color:'white',top:'15px',backgroundColor:'red',padding:'5px',fontWeight:'bold',borderRadius:'5px'}}>Logout</a> 
+               <a onClick={this.props.onLogoutClick} style={{position:'absolute',right:'10px',color:'white',top:'15px',backgroundColor:'red',padding:'5px',fontWeight:'bold',borderRadius:'5px',cursor:'pointer'}}>Logout</a> 
             </div>
         )
     }
