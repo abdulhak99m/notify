@@ -36,7 +36,7 @@ function TodoForm(props) {
       {props.edit ? (
         <>
           <input
-            placeholder='Update Parent Number'
+            placeholder='Update Parent Name'
             value={input}
             onChange={handleChange}
             name='text'
@@ -44,7 +44,8 @@ function TodoForm(props) {
             className='todo-input edit'
           /> <p>
           <input
-            placeholder='Update Parent Name'
+            type = 'number'
+            placeholder='Update Parent Number'
             value={input2}
             onChange={handleChange}
             name='text2'
@@ -59,7 +60,7 @@ function TodoForm(props) {
       ) : (
         <>
           <input
-            placeholder='Add Parent Number'
+            placeholder='Add Parent Name'
             value={input}
             onChange={handleChange}
             name='text'
@@ -68,7 +69,8 @@ function TodoForm(props) {
           />
           <p>
           <input
-            placeholder='Add Parent Name'
+            type = 'number'
+            placeholder='Add Parent Number'
             value={input2}
             onChange={handleChange2}
             name='text2'
@@ -77,7 +79,7 @@ function TodoForm(props) {
           />
           </p>
           <button onClick={handleSubmit} className='todo-button'>
-            Add Package
+            Add 
           </button>
         </>
       )}
