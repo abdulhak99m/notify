@@ -1,5 +1,7 @@
   
 import React, { useState, useEffect, useRef } from 'react';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : '');
@@ -68,7 +70,13 @@ function TodoForm(props) {
            // ref={inputRef}
           />
           <p>
-          <input
+
+          <PhoneInput
+        placeholder="Enter phone number"
+        value={input2}
+        onChange={handleChange2}
+      />
+          {/* <input
             type = 'number'
             placeholder='Add Parent Number'
             value={input2}
@@ -76,7 +84,7 @@ function TodoForm(props) {
             name='text2'
             className='todo-input'
            // ref={inputRef}
-          />
+          /> */}
           </p>
           <button onClick={handleSubmit} className='todo-button'>
             Add 
